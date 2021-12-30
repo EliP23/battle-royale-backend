@@ -1,0 +1,5 @@
+curl -X POST -H "Content-Type: application/json" -d @src/test/resources/data/position.json "http://localhost:8080/test"  -vvv
+
+#!/bin/bash
+
+curl -X POST -H "Content-Type: application/json" -d @src/test/resources/data/position.json "http://localhost:8080/test"  -vvv
