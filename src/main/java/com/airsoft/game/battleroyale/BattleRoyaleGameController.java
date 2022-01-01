@@ -2,6 +2,7 @@ package com.airsoft.game.battleroyale;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,11 @@ public class BattleRoyaleGameController {
     @RequestMapping(path = "/battle-royale-game", method = RequestMethod.GET)
     public List<BattleRoyaleState> getBattleRoyaleGames(){
         return battleRoyaleDao.getBattleRoyaleGames();
+    }
+
+    @RequestMapping(path = "/battle-royale-game/{gameId}", method = RequestMethod.GET)
+    public BattleRoyaleState getBattleRoyaleGame(@PathVariable("gameId") String gameId){
+        return battleRoyaleDao.getBattleRoyaleGame(gameId);
     }
 
 }
