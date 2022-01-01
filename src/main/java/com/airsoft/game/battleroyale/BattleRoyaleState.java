@@ -10,6 +10,7 @@ import java.util.Stack;
 
 public class BattleRoyaleState {
 
+    private String gameName;
     private String gameId;
     private List<LatLongPoint> gameBoundary;
     private Instant start;
@@ -17,6 +18,13 @@ public class BattleRoyaleState {
     private BattleRoyaleCircle shrinkingCircle;
     private Map<String, Stack<BattleRoyalePlayer>> players;
 
+    public String getGameName() {
+        return gameName;
+    }
+
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
+    }
 
     public String getGameId() {
         return gameId;

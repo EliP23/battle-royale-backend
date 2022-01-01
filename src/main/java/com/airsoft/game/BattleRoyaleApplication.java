@@ -1,7 +1,9 @@
 package com.airsoft.game;
 
+import com.airsoft.game.battleroyale.BattleRoyaleDao;
 import com.airsoft.game.battleroyale.BattleRoyaleState;
 import com.airsoft.game.geo.LatLongPoint;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +14,9 @@ import java.util.List;
 
 @SpringBootApplication
 public class BattleRoyaleApplication implements CommandLineRunner {
+
+	@Autowired
+	BattleRoyaleDao battleRoyaleDao;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BattleRoyaleApplication.class, args);
@@ -41,6 +46,6 @@ public class BattleRoyaleApplication implements CommandLineRunner {
 		);
 		battleRoyaleState.setGameBoundary(gameBoundary);
 
-
+		battleRoyaleDao.saveBattleRoyaleState(battleRoyaleState);
 	}
 }
