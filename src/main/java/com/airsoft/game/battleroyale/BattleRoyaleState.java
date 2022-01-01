@@ -33,4 +33,36 @@ public class BattleRoyaleState {
     public void setGameBoundary(List<LatLongPoint> gameBoundary) {
         this.gameBoundary = gameBoundary;
     }
+
+    public Instant getStart() {
+        return start;
+    }
+
+    public void setStart(Instant start) {
+        this.start = start;
+    }
+
+    public long getMillisDuration() {
+        return millisDuration;
+    }
+
+    public void setMillisDuration(long millisDuration) {
+        this.millisDuration = millisDuration;
+    }
+
+    public BattleRoyaleCircle getShrinkingCircle() {
+        return shrinkingCircle;
+    }
+
+    public void setShrinkingCircle(BattleRoyaleCircle shrinkingCircle) {
+        this.shrinkingCircle = shrinkingCircle;
+    }
+
+    public Map<String, Stack<BattleRoyalePlayer>> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Map<String, Stack<BattleRoyalePlayer>> players) {
+        this.players = players;
+    }
 }

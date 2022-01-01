@@ -5,7 +5,7 @@ import com.airsoft.game.geo.LatLongPoint;
 public class BattleRoyaleCircle {
 
     private LatLongPoint center;
-    private double radius;
+    private double radiusMeters;
 
     public LatLongPoint getCenter() {
         return center;
@@ -15,11 +15,11 @@ public class BattleRoyaleCircle {
         this.center = center;
     }
 
-    public double getRadius() {
-        return radius;
+    public double getRadiusMeters() {
+        return radiusMeters;
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
+    public void setRadiusMeters(double radiusMeters) {
+        this.radiusMeters = radiusMeters;
     }
 }
