@@ -13,7 +13,7 @@ import java.util.List;
 public class BattleRoyaleGameController {
 
     @Autowired
-    BattleRoyaleDao battleRoyaleDao;
+    BattleRoyaleDAO battleRoyaleDao;
 
     @RequestMapping(path = "/battle-royale-game", method = RequestMethod.GET)
     public List<BattleRoyaleState> getBattleRoyaleGames(){
@@ -22,6 +22,12 @@ public class BattleRoyaleGameController {
 
     @RequestMapping(path = "/battle-royale-game/{gameId}", method = RequestMethod.GET)
     public BattleRoyaleState getBattleRoyaleGame(@PathVariable("gameId") String gameId){
+        return battleRoyaleDao.getBattleRoyaleGame(gameId);
+    }
+
+    @RequestMapping(path = "/battle-royale-game/{gameId}/{playerId}", method = RequestMethod.GET)
+    public BattleRoyaleState getBattleRoyaleGame(@PathVariable("gameId") String gameId,
+                                                 @PathVariable("playerId") String playerId){
         return battleRoyaleDao.getBattleRoyaleGame(gameId);
     }
 

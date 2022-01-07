@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class InMemoryBattleRoyaleDao implements BattleRoyaleDao {
+public class InMemoryBattleRoyaleDao implements BattleRoyaleDAO {
 
     private Map<String, BattleRoyaleState> battleRoyaleStateMap = new HashMap<>();
 
@@ -34,5 +34,17 @@ public class InMemoryBattleRoyaleDao implements BattleRoyaleDao {
     @Override
     public BattleRoyaleState getBattleRoyaleGame(String gameId) {
         return battleRoyaleStateMap.get(gameId);
+    }
+
+    @Override
+    public BattleRoyaleGameStateDTO getBattleRoyaleGameStateForPlayer(String gameId, String playerId) {
+
+        BattleRoyaleState battleRoyaleState = battleRoyaleStateMap.get(gameId);
+
+        BattleRoyaleGameStateDTO battleRoyaleGameStateDTO = new BattleRoyaleGameStateDTO();
+
+//        battleRoyaleGameStateDTO.setTimeRemainingMillis(battleRoyaleState.getStart().plusMillis(battleRoyaleState.getMillisDuration()));
+
+        return battleRoyaleGameStateDTO;
     }
 }

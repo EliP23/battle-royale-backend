@@ -1,6 +1,6 @@
 package com.airsoft.game;
 
-import com.airsoft.game.battleroyale.BattleRoyaleDao;
+import com.airsoft.game.battleroyale.BattleRoyaleDAO;
 import com.airsoft.game.battleroyale.BattleRoyaleState;
 import com.airsoft.game.geo.LatLongPoint;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.util.List;
 public class BattleRoyaleApplication implements CommandLineRunner {
 
 	@Autowired
-	BattleRoyaleDao battleRoyaleDao;
+	BattleRoyaleDAO battleRoyaleDao;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BattleRoyaleApplication.class, args);

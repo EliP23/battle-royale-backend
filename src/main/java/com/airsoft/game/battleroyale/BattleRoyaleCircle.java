@@ -6,6 +6,7 @@ public class BattleRoyaleCircle {
 
     private LatLongPoint center;
     private double radiusMeters;
+    private String label;
 
     public LatLongPoint getCenter() {
         return center;
