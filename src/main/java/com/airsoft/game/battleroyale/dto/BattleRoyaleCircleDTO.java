@@ -1,8 +1,13 @@
-package com.airsoft.game.battleroyale;
+package com.airsoft.game.battleroyale.dto;
 
 import com.airsoft.game.geo.LatLongPoint;
 
-public class BattleRoyaleCircle {
+/**
+ * Describes the safe zone and "blue" zone.
+ *
+ * @author Ryan Pelletier
+ */
+public class BattleRoyaleCircleDTO {
 
     private LatLongPoint center;
     private double radiusMeters;

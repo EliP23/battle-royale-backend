@@ -1,17 +1,18 @@
 package com.airsoft.game.battleroyale;
 
+import com.airsoft.game.battleroyale.model.BattleRoyaleGame;
+import com.airsoft.game.battleroyale.model.BattleRoyalePlayer;
+
 import java.util.List;
 
 public interface BattleRoyaleDAO {
 
-    void saveBattleRoyaleState(BattleRoyaleState battleRoyaleState);
+    void saveBattleRoyaleState(BattleRoyaleGame battleRoyaleGame);
 
     void updatePlayerPosition(BattleRoyalePlayer battleRoyalePlayer);
 
-    List<BattleRoyaleState> getBattleRoyaleGames();
+    List<BattleRoyaleGame> getBattleRoyaleGames();
 
-    BattleRoyaleState getBattleRoyaleGame(String gameId);
-
-    BattleRoyaleGameStateDTO getBattleRoyaleGameStateForPlayer(String gameId, String playerId);
+    BattleRoyaleGame getBattleRoyaleGame(String gameId);
 
 }

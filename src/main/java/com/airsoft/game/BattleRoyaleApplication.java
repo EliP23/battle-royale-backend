@@ -1,7 +1,7 @@
 package com.airsoft.game;
 
 import com.airsoft.game.battleroyale.BattleRoyaleDAO;
-import com.airsoft.game.battleroyale.BattleRoyaleState;
+import com.airsoft.game.battleroyale.model.BattleRoyaleGame;
 import com.airsoft.game.geo.LatLongPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -26,11 +26,11 @@ public class BattleRoyaleApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		BattleRoyaleState battleRoyaleState = new BattleRoyaleState();
-		battleRoyaleState.setGameId("test");
-		battleRoyaleState.setStart(Instant.now());
+		BattleRoyaleGame battleRoyaleGame = new BattleRoyaleGame();
+		battleRoyaleGame.setGameId("test");
+		battleRoyaleGame.setStart(Instant.now());
 		//10 minutes
-		battleRoyaleState.setMillisDuration(30000);
+		battleRoyaleGame.setMillisDuration(30000);
 
 
 		/*
@@ -44,8 +44,8 @@ public class BattleRoyaleApplication implements CommandLineRunner {
 				new LatLongPoint(38.896806, -77.619754),
 				new LatLongPoint(38.896042, -77.619991)
 		);
-		battleRoyaleState.setGameBoundary(gameBoundary);
+		battleRoyaleGame.setGameBoundary(gameBoundary);
 
-		battleRoyaleDao.saveBattleRoyaleState(battleRoyaleState);
+		battleRoyaleDao.saveBattleRoyaleState(battleRoyaleGame);
 	}
 }

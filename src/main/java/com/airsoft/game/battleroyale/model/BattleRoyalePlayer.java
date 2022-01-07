@@ -1,4 +1,4 @@
-package com.airsoft.game.battleroyale;
+package com.airsoft.game.battleroyale.model;
 
 import com.airsoft.game.common.TrackedItem;
 

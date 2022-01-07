@@ -1,4 +1,4 @@
-package com.airsoft.game.battleroyale;
+package com.airsoft.game.battleroyale.dto;
 
 import com.airsoft.game.geo.LatLongPoint;
 
@@ -9,12 +9,13 @@ import com.airsoft.game.geo.LatLongPoint;
  *
  * @author Ryan Pelletier
  */
-public class BattleRoyaleGameStateDTO {
+public class BattleRoyalePlayerStateDTO {
 
     private LatLongPoint userLocation;
     private long timeRemainingMillis;
-    private BattleRoyaleCircle whiteCircle;
-    private BattleRoyaleCircle blueCircle;
+    private boolean alive;
+    private BattleRoyaleCircleDTO whiteCircle;
+    private BattleRoyaleCircleDTO blueCircle;
 
     public LatLongPoint getUserLocation() {
         return userLocation;
@@ -32,19 +33,27 @@ public class BattleRoyaleGameStateDTO {
         this.timeRemainingMillis = timeRemainingMillis;
     }
 
-    public BattleRoyaleCircle getWhiteCircle() {
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public BattleRoyaleCircleDTO getWhiteCircle() {
         return whiteCircle;
     }
 
-    public void setWhiteCircle(BattleRoyaleCircle whiteCircle) {
+    public void setWhiteCircle(BattleRoyaleCircleDTO whiteCircle) {
         this.whiteCircle = whiteCircle;
     }
 
-    public BattleRoyaleCircle getBlueCircle() {
+    public BattleRoyaleCircleDTO getBlueCircle() {
         return blueCircle;
     }
 
-    public void setBlueCircle(BattleRoyaleCircle blueCircle) {
+    public void setBlueCircle(BattleRoyaleCircleDTO blueCircle) {
         this.blueCircle = blueCircle;
     }
 }
