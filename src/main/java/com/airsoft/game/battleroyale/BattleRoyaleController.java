@@ -3,6 +3,7 @@ package com.airsoft.game.battleroyale;
 
 import com.airsoft.game.battleroyale.api.BattleRoyaleGameDTO;
 import com.airsoft.game.battleroyale.api.BattleRoyalePlayerStateDTO;
+import com.airsoft.game.battleroyale.api.GameJoinRequest;
 import com.airsoft.game.geo.LatLongPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +27,8 @@ public class BattleRoyaleController {
     }
 
     @RequestMapping(path = "/battle-royale-game/{gameId}/join", method = RequestMethod.POST)
-    public String registerPlayer(@PathVariable("gameId") String gameId){
-        return battleRoyaleService.joinNewPlayer(gameId);
+    public String registerPlayer(@PathVariable("gameId") String gameId, @RequestBody GameJoinRequest gameJoinRequest){
+        return battleRoyaleService.joinNewPlayer(gameId, gameJoinRequest);
     }
 
     @RequestMapping(path = "/battle-royale-game/{gameId}/{playerId}", method = RequestMethod.GET)

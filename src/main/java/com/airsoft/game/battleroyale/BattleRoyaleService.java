@@ -2,6 +2,7 @@ package com.airsoft.game.battleroyale;
 
 import com.airsoft.game.battleroyale.api.BattleRoyaleGameDTO;
 import com.airsoft.game.battleroyale.api.BattleRoyalePlayerStateDTO;
+import com.airsoft.game.battleroyale.api.GameJoinRequest;
 import com.airsoft.game.battleroyale.model.BattleRoyaleGame;
 import com.airsoft.game.battleroyale.model.BattleRoyalePlayer;
 import com.airsoft.game.geo.LatLongPoint;
@@ -29,15 +30,15 @@ public class BattleRoyaleService {
     BattleRoyaleDAO battleRoyaleDAO;
 
 
-    public String joinNewPlayer(String gameId){
+    public String joinNewPlayer(String gameId, GameJoinRequest gameJoinRequest){
         String playerId = UUID.randomUUID().toString();
-        battleRoyaleDAO.addPlayerToGame(gameId, playerId);
+        battleRoyaleDAO.addPlayerToGame(gameId, playerId, gameJoinRequest);
         return playerId;
     }
 
     public BattleRoyalePlayer playerLocationUpdateToBattleRoyalePlayer(String gameId, String playerId, LatLongPoint latLongPoint){
         BattleRoyalePlayer battleRoyalePlayer = new BattleRoyalePlayer();
-        battleRoyalePlayer.setGameId(gameId);
+        battleRoyalePlayer.setId(gameId);
         battleRoyalePlayer.setId(playerId);
         battleRoyalePlayer.setLocation(latLongPoint);
         //TODO check if player should be alive and set that
@@ -67,8 +68,8 @@ public class BattleRoyaleService {
         battleRoyaleDAO.saveBattleRoyaleState(battleRoyaleGame);
     }
 
-    public void updatePlayerPosition(BattleRoyalePlayer battleRoyalePlayer) {
-        BattleRoyaleGame battleRoyaleGame = battleRoyaleDAO.getBattleRoyaleGame(battleRoyalePlayer.getGameId());
+    public void updatePlayerPosition(String gameId, BattleRoyalePlayer battleRoyalePlayer) {
+        BattleRoyaleGame battleRoyaleGame = battleRoyaleDAO.getBattleRoyaleGame(gameId);
         battleRoyalePlayer.setTime(Instant.now());
         battleRoyaleGame.getPlayers().get(battleRoyalePlayer.getId()).push(battleRoyalePlayer);
     }

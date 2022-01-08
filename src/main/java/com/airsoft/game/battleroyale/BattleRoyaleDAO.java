@@ -1,5 +1,6 @@
 package com.airsoft.game.battleroyale;
 
+import com.airsoft.game.battleroyale.api.GameJoinRequest;
 import com.airsoft.game.battleroyale.model.BattleRoyaleGame;
 import com.airsoft.game.battleroyale.model.BattleRoyalePlayer;
 
@@ -9,9 +10,9 @@ public interface BattleRoyaleDAO {
 
     void saveBattleRoyaleState(BattleRoyaleGame battleRoyaleGame);
 
-    void addPlayerToGame(String gameId, String playerId);
+    void addPlayerToGame(String gameId, String playerId, GameJoinRequest gameJoinRequest);
 
-    void updatePlayerPosition(BattleRoyalePlayer battleRoyalePlayer);
+    void updatePlayerPosition(String gameId, BattleRoyalePlayer battleRoyalePlayer);
 
     List<BattleRoyaleGame> getBattleRoyaleGames();
 
