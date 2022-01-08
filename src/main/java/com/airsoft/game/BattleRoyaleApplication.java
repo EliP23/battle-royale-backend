@@ -28,7 +28,7 @@ public class BattleRoyaleApplication implements CommandLineRunner {
 
 		BattleRoyaleGame battleRoyaleGame = new BattleRoyaleGame();
 		battleRoyaleGame.setGameId("test");
-		battleRoyaleGame.setStart(Instant.now());
+		battleRoyaleGame.setStartTime(Instant.now());
 		//10 minutes
 		battleRoyaleGame.setMillisDuration(30000);
 

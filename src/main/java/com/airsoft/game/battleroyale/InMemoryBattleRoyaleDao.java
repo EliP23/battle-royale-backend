@@ -5,10 +5,7 @@ import com.airsoft.game.battleroyale.model.BattleRoyalePlayer;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class InMemoryBattleRoyaleDao implements BattleRoyaleDAO {
@@ -21,9 +18,15 @@ public class InMemoryBattleRoyaleDao implements BattleRoyaleDAO {
     }
 
     @Override
+    public void addPlayerToGame(String gameId, String playerId) {
+        battleRoyaleStateMap.get(gameId).getPlayers().put(playerId, new Stack<>());
+    }
+
+    @Override
     public void updatePlayerPosition(BattleRoyalePlayer battleRoyalePlayer) {
         BattleRoyaleGame battleRoyaleGame = this.getBattleRoyaleGame(battleRoyalePlayer.getGameId());
         battleRoyalePlayer.setTime(Instant.now());
+        battleRoyaleGame.getPlayers().computeIfAbsent(battleRoyalePlayer.getId(), k -> new Stack<>());
         battleRoyaleGame.getPlayers().get(battleRoyalePlayer.getId()).push(battleRoyalePlayer);
     }
 

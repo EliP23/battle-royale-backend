@@ -1,4 +1,4 @@
-package com.airsoft.game.battleroyale.dto;
+package com.airsoft.game.battleroyale.api;
 
 import com.airsoft.game.geo.LatLongPoint;
 

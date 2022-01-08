@@ -1,7 +1,7 @@
 package com.airsoft.game.battleroyale;
 
-import com.airsoft.game.battleroyale.dto.BattleRoyaleGameDTO;
-import com.airsoft.game.battleroyale.dto.BattleRoyalePlayerStateDTO;
+import com.airsoft.game.battleroyale.api.BattleRoyaleGameDTO;
+import com.airsoft.game.battleroyale.api.BattleRoyalePlayerStateDTO;
 import com.airsoft.game.battleroyale.model.BattleRoyaleGame;
 import com.airsoft.game.battleroyale.model.BattleRoyalePlayer;
 import com.airsoft.game.geo.LatLongPoint;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -27,6 +27,13 @@ public class BattleRoyaleService {
 
     @Autowired
     BattleRoyaleDAO battleRoyaleDAO;
+
+
+    public String joinNewPlayer(String gameId){
+        String playerId = UUID.randomUUID().toString();
+        battleRoyaleDAO.addPlayerToGame(gameId, playerId);
+        return playerId;
+    }
 
     public BattleRoyalePlayer playerLocationUpdateToBattleRoyalePlayer(String gameId, String playerId, LatLongPoint latLongPoint){
         BattleRoyalePlayer battleRoyalePlayer = new BattleRoyalePlayer();
@@ -44,7 +51,7 @@ public class BattleRoyaleService {
         BattleRoyalePlayerStateDTO battleRoyaleGameStateDTO = new BattleRoyalePlayerStateDTO();
 
         // set amount of time remaining in the game
-        battleRoyaleGameStateDTO.setTimeRemainingMillis(ChronoUnit.MILLIS.between(battleRoyaleGame.getStart(),
+        battleRoyaleGameStateDTO.setTimeRemainingMillis(ChronoUnit.MILLIS.between(battleRoyaleGame.getStartTime(),
                 Instant.now()));
 
         //get current player's most recent position as lat/long pair

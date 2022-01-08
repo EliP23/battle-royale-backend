@@ -1,7 +1,7 @@
 package com.airsoft.game.battleroyale.model;
 
 import com.airsoft.game.battleroyale.common.AbstractBattleRoyaleGame;
-import com.airsoft.game.battleroyale.dto.BattleRoyaleCircleDTO;
+import com.airsoft.game.battleroyale.api.BattleRoyaleCircleDTO;
 
 import java.time.Instant;
 import java.util.Map;
@@ -10,16 +10,25 @@ import java.util.Stack;
 
 public class BattleRoyaleGame extends AbstractBattleRoyaleGame {
 
-    private Instant start;
+    private Instant startTime;
+    private boolean running;
     private BattleRoyaleCircleDTO shrinkingCircle;
     private Map<String, Stack<BattleRoyalePlayer>> players;
 
-    public Instant getStart() {
-        return start;
+    public Instant getStartTime() {
+        return startTime;
     }
 
-    public void setStart(Instant start) {
-        this.start = start;
+    public void setStartTime(Instant startTime) {
+        this.startTime = startTime;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
     }
 
     public BattleRoyaleCircleDTO getShrinkingCircle() {

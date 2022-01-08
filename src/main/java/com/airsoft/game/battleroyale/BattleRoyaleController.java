@@ -1,8 +1,8 @@
 package com.airsoft.game.battleroyale;
 
 
-import com.airsoft.game.battleroyale.dto.BattleRoyaleGameDTO;
-import com.airsoft.game.battleroyale.dto.BattleRoyalePlayerStateDTO;
+import com.airsoft.game.battleroyale.api.BattleRoyaleGameDTO;
+import com.airsoft.game.battleroyale.api.BattleRoyalePlayerStateDTO;
 import com.airsoft.game.geo.LatLongPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +25,11 @@ public class BattleRoyaleController {
         return battleRoyaleService.getBattleRoyaleGame(gameId);
     }
 
+    @RequestMapping(path = "/battle-royale-game/{gameId}/join", method = RequestMethod.POST)
+    public String registerPlayer(@PathVariable("gameId") String gameId){
+        return battleRoyaleService.joinNewPlayer(gameId);
+    }
+
     @RequestMapping(path = "/battle-royale-game/{gameId}/{playerId}", method = RequestMethod.GET)
     public BattleRoyalePlayerStateDTO getBattleRoyaleGame(@PathVariable("gameId") String gameId,
                                                           @PathVariable("playerId") String playerId){
@@ -35,7 +40,6 @@ public class BattleRoyaleController {
     public void updatePlayerPosition(@PathVariable("gameId") String gameId,
                                                      @PathVariable("playerId") String playerId,
                                                      @RequestBody LatLongPoint latLongPoint){
-
         battleRoyaleService.playerLocationUpdateToBattleRoyalePlayer(gameId, playerId, latLongPoint);
     }
 

@@ -9,6 +9,8 @@ public interface BattleRoyaleDAO {
 
     void saveBattleRoyaleState(BattleRoyaleGame battleRoyaleGame);
 
+    void addPlayerToGame(String gameId, String playerId);
+
     void updatePlayerPosition(BattleRoyalePlayer battleRoyalePlayer);
 
     List<BattleRoyaleGame> getBattleRoyaleGames();
