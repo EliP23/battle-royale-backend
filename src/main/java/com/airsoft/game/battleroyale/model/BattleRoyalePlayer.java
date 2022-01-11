@@ -1,6 +1,6 @@
 package com.airsoft.game.battleroyale.model;
 
-import com.airsoft.game.common.TrackedItem;
+import com.airsoft.game.battleroyale.common.TrackedItem;
 
 public class BattleRoyalePlayer extends TrackedItem {
 

@@ -1,6 +1,4 @@
-package com.airsoft.game.common;
-
-import com.airsoft.game.geo.LatLongPoint;
+package com.airsoft.game.battleroyale.common;
 
 import java.time.Instant;
 

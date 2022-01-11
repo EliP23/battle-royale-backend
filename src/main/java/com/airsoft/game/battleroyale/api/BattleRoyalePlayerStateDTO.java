@@ -1,6 +1,6 @@
 package com.airsoft.game.battleroyale.api;
 
-import com.airsoft.game.geo.LatLongPoint;
+import com.airsoft.game.battleroyale.common.LatLongPoint;
 
 /**
  *

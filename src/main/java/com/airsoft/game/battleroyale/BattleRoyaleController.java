@@ -4,7 +4,7 @@ package com.airsoft.game.battleroyale;
 import com.airsoft.game.battleroyale.api.BattleRoyaleGameDTO;
 import com.airsoft.game.battleroyale.api.BattleRoyalePlayerStateDTO;
 import com.airsoft.game.battleroyale.api.GameJoinRequest;
-import com.airsoft.game.geo.LatLongPoint;
+import com.airsoft.game.battleroyale.common.LatLongPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

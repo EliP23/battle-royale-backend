@@ -2,7 +2,7 @@ package com.airsoft.game;
 
 import com.airsoft.game.battleroyale.BattleRoyaleDAO;
 import com.airsoft.game.battleroyale.model.BattleRoyaleGame;
-import com.airsoft.game.geo.LatLongPoint;
+import com.airsoft.game.battleroyale.common.LatLongPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

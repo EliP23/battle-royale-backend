@@ -1,7 +1,5 @@
 package com.airsoft.game.battleroyale.common;
 
-import com.airsoft.game.geo.LatLongPoint;
-
 import java.util.List;
 
 /**
@@ -13,6 +11,7 @@ public abstract class AbstractBattleRoyaleGame {
 
     private String gameName;
     private String gameId;
+    private List<LatLongPoint> safeZone;
     private List<LatLongPoint> gameBoundary;
     private long millisDuration;
 
@@ -30,6 +29,14 @@ public abstract class AbstractBattleRoyaleGame {
 
     public void setGameId(String gameId) {
         this.gameId = gameId;
+    }
+
+    public List<LatLongPoint> getSafeZone() {
+        return safeZone;
+    }
+
+    public void setSafeZone(List<LatLongPoint> safeZone) {
+        this.safeZone = safeZone;
     }
 
     public List<LatLongPoint> getGameBoundary() {

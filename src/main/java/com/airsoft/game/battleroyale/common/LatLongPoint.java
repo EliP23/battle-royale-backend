@@ -1,4 +1,4 @@
-package com.airsoft.game.geo;
+package com.airsoft.game.battleroyale.common;
 
 public class LatLongPoint {
 

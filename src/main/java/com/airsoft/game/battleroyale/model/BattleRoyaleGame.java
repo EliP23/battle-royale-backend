@@ -8,6 +8,11 @@ import java.util.Map;
 import java.util.Stack;
 
 
+/**
+ * Holds the state of a Battle Royale game.
+ *
+ * @author Ryan Pelletier
+ */
 public class BattleRoyaleGame extends AbstractBattleRoyaleGame {
 
     private Instant startTime;
