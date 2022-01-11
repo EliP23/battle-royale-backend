@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+/**
+ * Endpoints for interacting with Battle Royale games.
+ *
+ * @author Ryan Pelletier
+ */
 @RestController
 public class BattleRoyaleController {
 

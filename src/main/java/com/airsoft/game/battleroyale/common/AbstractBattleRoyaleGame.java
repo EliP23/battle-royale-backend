@@ -13,7 +13,7 @@ public abstract class AbstractBattleRoyaleGame {
     private String gameId;
     private List<LatLongPoint> safeZone;
     private List<LatLongPoint> gameBoundary;
-    private long millisDuration;
+    private Long millisDuration;
 
     public String getGameName() {
         return gameName;
